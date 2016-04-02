@@ -41,36 +41,19 @@ public class computewall {
 
     public void calculate() {
         boolean uniqueCheck;
-        ArrayList<String> usedPosibilities = new ArrayList<>();
         do {
             count++;
             if (count % 1000 == 0) {
                 System.out.println("count: " + count);
             }
             sortedComputewall.clear();
-            boolean duplicateCheck;
-            boolean ohCheck;
             uniqueCheck = false;
-            //Set values and search for duplicates and 0
-            do {
-                duplicateCheck = false;
-                ohCheck = false;
-                computewallValueReplace(computewallInt, 4, 0, rnd.nextInt(16));
-                computewallValueReplace(computewallInt, 4, 1, rnd.nextInt(16));
-                computewallValueReplace(computewallInt, 4, 2, rnd.nextInt(16));
-                computewallValueReplace(computewallInt, 4, 3, rnd.nextInt(16));
-                computewallValueReplace(computewallInt, 4, 4, rnd.nextInt(16));
-                if (computewallInt[4][0] == computewallInt[4][1] | computewallInt[4][0] == computewallInt[4][2] | computewallInt[4][0] == computewallInt[4][3] | computewallInt[4][0] == computewallInt[4][4]
-                        | computewallInt[4][1] == computewallInt[4][2] | computewallInt[4][1] == computewallInt[4][3] | computewallInt[4][1] == computewallInt[4][4]
-                        | computewallInt[4][2] == computewallInt[4][3] | computewallInt[4][2] == computewallInt[4][4] | computewallInt[4][3] == computewallInt[4][4]) {
-                    duplicateCheck = true;
+            //Set values
+            for (int i = 0; i < 4; i++) {
+                for (int j = 0; i < 16; j++) {
+                    computewallValueReplace(computewallInt, 4, i, j);
                 }
-                if (computewallInt[4][0] == 0 | (computewallInt[4][1] == 0) | (computewallInt[4][1] == 0) | (computewallInt[4][3] == 0) | computewallInt[4][4] == 0) {
-                    ohCheck = true;
-                }
-            } while (duplicateCheck | ohCheck);
-            //usedPosibilities.add(String.valueOf(computewallInt [4][0]) + String.valueOf(computewallInt [4][1]) + String.valueOf(computewallInt [4][2])
-            //        + String.valueOf(computewallInt [4][3]) + String.valueOf(computewallInt [4][4]));
+            }
 
             //Rest of calculating
             computewallInt[3][0] = Math.abs(computewallInt[4][0] - computewallInt[4][1]);
