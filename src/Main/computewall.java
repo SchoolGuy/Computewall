@@ -40,13 +40,17 @@ public class computewall {
     }
 
     public void calculate() {
-        boolean uniqueCheck = false;
+        boolean uniqueCheck;
         ArrayList<String> usedPosibilities = new ArrayList<>();
         do {
             count++;
+            if (count % 1000 == 0) {
+                System.out.println("count: " + count);
+            }
             sortedComputewall.clear();
             boolean duplicateCheck;
             boolean ohCheck;
+            uniqueCheck = false;
             //Set values and search for duplicates and 0
             do {
                 duplicateCheck = false;
