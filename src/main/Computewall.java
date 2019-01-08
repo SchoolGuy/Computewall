@@ -1,17 +1,17 @@
-package Main;
+package main;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
 
-public class computewall {
+public class Computewall {
 
     int[][] computewallInt = null;
     int count;
     ArrayList<Integer> sortedComputewall = null;
     Random rnd = new Random();
 
-    public computewall() {
+    public Computewall() {
         count = 0;
         sortedComputewall = new ArrayList<>();
         computewallInt = new int[5][5];
