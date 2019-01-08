@@ -1,10 +1,14 @@
 package main;
 
+import main.view.NumberWallTerminalGame;
+
 /**
- * Created by Enno on 02.04.2016.
+ * Main entry point for the application.
  */
 public class Main {
     public static void main (String[] args) {
-        Computewall computewall = new Computewall();
+        NumberWallTerminalGame terminalGame = new NumberWallTerminalGame();
+        terminalGame.startGame();
+        terminalGame.printSolution();
     }
 }
